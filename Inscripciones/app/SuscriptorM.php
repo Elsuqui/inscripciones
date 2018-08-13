@@ -10,14 +10,19 @@ class SuscriptorM extends Model
 
     /*Schema::create('suscriptores', function (Blueprint $table) {
                 $table->bigIncrements('idSuscriptor');
-                $table->string('nombre');
-                $table->string('email');
+                $table->string('primer_nombre');
+                $table->string('segundo_nombre')->nullable();
+                $table->string('primer_apellido');
+                $table->string('segundo_apellido')->nullable();
+                $table->string('email')->unique();
+                $table->string('telefono');
                 $table->integer('numero');
                 $table->timestamps();
             });*/
     protected $table='suscriptores';
             protected $fillable = [
-        'idSuscriptor', 'nombre', 'email','numero'
+        'primer_nombre', 'segundo_nombre', 'primer_apellido','segundo_apellido','email',
+        'telefono','numero'
     ];
 
 }

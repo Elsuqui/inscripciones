@@ -18,6 +18,7 @@ class Suscriptores extends Migration
         {
             Schema::create('suscriptores', function (Blueprint $table) {
                 $table->bigIncrements('idSuscriptor');
+                $table->integer('id_user')->unsigned();
                 $table->string('primer_nombre');
                 $table->string('segundo_nombre')->nullable();
                 $table->string('primer_apellido');
@@ -25,6 +26,7 @@ class Suscriptores extends Migration
                 $table->string('email')->unique();
                 $table->string('telefono');
                 $table->integer('numero');
+                $table->foreign('id_user')->references('id')->on('users');
                 $table->timestamps();
             });
         }
