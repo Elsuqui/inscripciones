@@ -46,8 +46,8 @@ class HomeController extends Controller
             $suscriptor->email=$request->email;
             $suscriptor->telefono=$request->telefono;
             $suscriptor->numero=$request->numero;
-            $suscriptor->id_user=1;
-            //$suscriptor->id_user=Auth::user()->id;
+            //$suscriptor->id_user=1;
+            $suscriptor->id_user=Auth::user()->id;
             $suscriptor->save();
             echo 'registro guardado';   
         }
