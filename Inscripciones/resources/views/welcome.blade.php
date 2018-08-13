@@ -82,27 +82,48 @@
             
             <div class="content">
                 <div class="title m-b-md">
-                    SYS BOOT
+                    <img src="{{ asset('img/logo.jpeg') }}" width="auto" height="auto" />SYS BOOT
                 </div>
 
                 <div class="title m-b-md">
-                    Inscripcion de Sorteo
+                    Inscripción de Sorteo
                 </div>
 
-                <div class="input-group mb-3">
-                    <input id="nombres" class="form-control" placeholder="Nombres" aria-label="Nombres" aria-describedby="basic-addon1">
-                </div>
+                <form action="route('HomeController@store')" method="POST" class="form-group card">
+                    @crsf
+                    <div class="card-body">
+                            <h5 class="card-title">Ingrese los datos del participante: </h5>
+                            <div class="input-group mb-3">
+                                <input id="primer_nombre" name="primer_nombre" class="form-control" placeholder="Primer Nombre" aria-label="Primer Nombre" aria-describedby="basic-addon1">
+                            </div>
 
-                <div class="input-group mb-3">
-                    <input id="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-                </div>
+                            <div class="input-group mb-3">
+                                    <input id="segundo_nombre" name="segundo_nombre" class="form-control" placeholder="Segundo Nombre" aria-label="Segundo Nombre" aria-describedby="basic-addon1">
+                            </div>
 
-                <div class="input-group mb-3">
-                    <input id="numero" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
-                </div>
+                            <div class="input-group mb-3">
+                                <input id="primer_apellido" name="primer_apellido" class="form-control" placeholder="Primer Apellido" aria-label="Primer Apellido" aria-describedby="basic-addon1">
+                            </div>
 
-                <button type="button" class="btn btn-primary">REGISTRAR</button>
-                
+                            <div class="input-group mb-3">
+                                    <input id="segundo_apellido" name="segundo_apellido" class="form-control" placeholder="Segundo Apellido" aria-label="Segundo Apellido" aria-describedby="basic-addon1">
+                            </div>
+            
+                            <div class="input-group mb-3">
+                                <input id="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                            </div>
+            
+                            <div class="input-group mb-3">
+                                <input id="telefono" name="telefono" class="form-control" placeholder="Telefono" aria-label="Numero" aria-describedby="basic-addon1">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input id="numero" name="numero" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
+                            </div>
+        
+                            <button type="button" class="btn btn-primary">REGISTRAR</button>
+                    </div>
+                </form>      
             </div>
         </div>
     </body>
