@@ -79,7 +79,7 @@
                     @endauth
                 </div>
             @endif
-
+            
             <div class="content">
                 <div class="title m-b-md">
                     SYS BOOT
@@ -90,18 +90,18 @@
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres" aria-describedby="basic-addon1">
+                    <input id="nombres" class="form-control" placeholder="Nombres" aria-label="Nombres" aria-describedby="basic-addon1">
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                    <input id="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
+                    <input id="numero" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
                 </div>
 
-                <button type="submit"></button>
+                <button type="button" class="btn btn-primary">REGISTRAR</button>
                 
             </div>
         </div>
