@@ -80,6 +80,7 @@
                 </div>
             @endif
             
+            @auth
             <div class="content">
                 <div class="title m-b-md">
                     <img src="{{ asset('img/logo.jpeg') }}" width="auto" height="auto" />SYS BOOT
@@ -89,8 +90,8 @@
                     Inscripción de Sorteo
                 </div>
 
-                <form action="route('HomeController@store')" method="POST" class="form-group card">
-                    @crsf
+                <form action="{{url('/save_participante')}}" method="POST" class="form-group card">
+                    @csrf
                     <div class="card-body">
                             <h5 class="card-title">Ingrese los datos del participante: </h5>
                             <div class="input-group mb-3">
@@ -121,10 +122,15 @@
                                 <input id="numero" name="numero" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
                             </div>
         
-                            <button type="button" class="btn btn-primary">REGISTRAR</button>
+                            <button type="submit" class="btn btn-primary">REGISTRAR</button>
                     </div>
                 </form>      
             </div>
+            @else
+            <div class="title m-b-md">
+                    <img src="{{ asset('img/logo.jpeg') }}" width="auto" height="auto" />SYS BOOT
+            </div>
+            @endauth
         </div>
     </body>
 </html>
