@@ -52,4 +52,8 @@ class HomeController extends Controller
             echo 'registro guardado';   
         }
     }
+    public function show($di)
+    {
+        return view('usuario_edit',SuscriptorM::find($di));
+    }
 }
