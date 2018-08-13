@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SuscriptorM;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -45,6 +46,7 @@ class HomeController extends Controller
             $suscriptor->email=$request->email;
             $suscriptor->telefono=$request->telefono;
             $suscriptor->numero=$request->numero;
+            $suscriptor->id_user=Auth::user()->id;
             $suscriptor->save();
             echo 'registro guardado';   
         }
