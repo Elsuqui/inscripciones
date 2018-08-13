@@ -26,9 +26,30 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function store(Request $Request)
+    public function store(Request $request)
     {
-        /* 'idSuscriptor', 'nombre', 'email','numero'*/
-        
+        /* 'primer_nombre', 'segundo_nombre', 'primer_apellido','segundo_apellido','email',
+        'telefono','numero'*/
+        $ex_suscriptor=SuscriptorM::where('numero','=',$request->numero)->get()->first();
+        if(!empty($ex_suscriptor))
+        {
+            echo 'error, número ya fue elegido';
+
+        }
+        else
+        {
+            $suscriptor=new SuscriptorM();
+            $suscriptor->primer_nombre=$request->primer_nombre;
+            $suscriptor->segundo_nombre=$request->segundo_nombre;
+            $suscriptor->primer_apellido=$request->primer_apellido;
+            $suscriptor->segundo_apellido=$request->segundo_apellido;
+            $suscriptor->email=$request->email;
+            $suscriptor->telefono=$request->telefono;
+            $suscriptor->numero=$request->numero;
+            $suscriptor->save();
+            echo 'registro guardado';
+            
+
+        }
     }
 }

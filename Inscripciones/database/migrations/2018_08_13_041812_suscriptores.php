@@ -23,7 +23,7 @@ class Suscriptores extends Migration
                 $table->string('segundo_nombre')->nullable();
                 $table->string('primer_apellido');
                 $table->string('segundo_apellido')->nullable();
-                $table->string('email')->unique();
+                $table->string('email');
                 $table->string('telefono');
                 $table->integer('numero');
                 $table->foreign('id_user')->references('id')->on('users');
