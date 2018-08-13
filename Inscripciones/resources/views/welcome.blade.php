@@ -34,6 +34,10 @@
                 justify-content: center;
             }
 
+            .flex-left{
+                float: left;
+            }
+
             .position-ref {
                 position: relative;
             }
@@ -53,7 +57,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #000000;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -61,13 +65,25 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
+            .nav-item a{
+                color: #000000;
+                font-weight: bold;
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
         </style>
     </head>
     <body>
+        <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Usuarios</a>
+                </li>
+        </ul>
+        
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -82,6 +98,7 @@
             
             @auth
             <div class="content">
+                    <div class="col-sm-6 ">
                 <div class="title m-b-md">
                     <img src="{{ asset('img/logo.jpeg') }}" width="auto" height="auto" />SYS BOOT
                 </div>
@@ -89,7 +106,7 @@
                 <div class="title m-b-md">
                     Inscripción de Sorteo
                 </div>
-
+                
                 <form action="{{url('/save_participante')}}" method="POST" class="form-group card">
                     @csrf
                     <div class="card-body">
@@ -123,9 +140,11 @@
                             </div>
         
                             <button type="submit" class="btn btn-primary">REGISTRAR</button>
-                    </div>
-                </form>      
+                    
+                </form>  
+                </div>    
             </div>
+        </div>
             @else
             <div class="title m-b-md">
                     <img src="{{ asset('img/logo.jpeg') }}" width="auto" height="auto" />SYS BOOT
