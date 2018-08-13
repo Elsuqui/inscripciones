@@ -24,5 +24,6 @@ class SuscriptorM extends Model
         'primer_nombre', 'segundo_nombre', 'primer_apellido','segundo_apellido','email',
         'telefono','numero'
     ];
+    
 
 }

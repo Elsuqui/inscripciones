@@ -56,4 +56,8 @@ class HomeController extends Controller
     {
         return view('usuario_edit',SuscriptorM::find($di));
     }
+    public function parts()
+    {
+        return view('participantes',SuscriptorM::where('id_user','=',Auth::user()->id)->get());
+    }
 }
