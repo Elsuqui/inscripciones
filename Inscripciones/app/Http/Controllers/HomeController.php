@@ -34,7 +34,6 @@ class HomeController extends Controller
         if(!empty($ex_suscriptor))
         {
             echo 'error, número ya fue elegido';
-
         }
         else
         {
@@ -47,9 +46,7 @@ class HomeController extends Controller
             $suscriptor->telefono=$request->telefono;
             $suscriptor->numero=$request->numero;
             $suscriptor->save();
-            echo 'registro guardado';
-            
-
+            echo 'registro guardado';   
         }
     }
 }
