@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/save_participante','HomeController@store');
 Route::get('/show_participante/{id_participante}','HomeController@show');
 Route::get('/participantes','HomeController@parts');
+Route::post('/modificar_participante','HomeController@update');

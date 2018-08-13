@@ -60,4 +60,27 @@ class HomeController extends Controller
     {
         return view('participantes',SuscriptorM::where('id_user','=',Auth::user()->id)->get());
     }
+    public function update(Request $request)
+    {
+        $ex_suscriptor=SuscriptorM::where('numero','=',$request->numero)->get()->first();
+        if(!empty($ex_suscriptor))
+        {
+            echo 'error, número ya fue elegido';
+        }
+        else
+        {
+            $suscriptor=SuscriptorM::find($request->id);
+            $suscriptor->primer_nombre=$request->primer_nombre;
+            $suscriptor->segundo_nombre=$request->segundo_nombre;
+            $suscriptor->primer_apellido=$request->primer_apellido;
+            $suscriptor->segundo_apellido=$request->segundo_apellido;
+            $suscriptor->email=$request->email;
+            $suscriptor->telefono=$request->telefono;
+            $suscriptor->numero=$request->numero;
+            //$suscriptor->id_user=1;
+            $suscriptor->save();
+            echo 'registro modificado';
+        }
+        
+    }
 }
