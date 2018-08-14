@@ -23,7 +23,9 @@
                 height: 100vh;
                 margin: 0;
             }
-
+            .tab{
+            	font-weight: bold;
+            }
             .full-height {
                 height: 100vh;
             }
@@ -97,53 +99,51 @@
             @endif
             
             @auth
-            <div class="content">
-                <!--<div class="title m-b-md">
-                    <img src="{{ asset('img/logo.jpeg') }}" width="auto" height="auto" />SYS BOOT
-                </div>-->
-                <br>
-                <br>
-                <!--<div class="title m-b-md">
-                    Inscripción de Sorteo
-                </div>-->
-                
-                <form action="{{url('/save_participante')}}" method="POST" class="form-group card">
-                    @csrf
-                    <div class="card-body">
-                            <h5 class="card-title">Ingrese los datos del participante: </h5>
-                            <div class="input-group mb-3">
-                                <input id="primer_nombre" name="primer_nombre" class="form-control" placeholder="Primer Nombre" aria-label="Primer Nombre" required aria-describedby="basic-addon1">
-                            </div>
-
-                            <div class="input-group mb-3">
-                                    <input id="segundo_nombre" name="segundo_nombre" class="form-control" placeholder="Segundo Nombre" aria-label="Segundo Nombre" aria-describedby="basic-addon1">
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <input id="primer_apellido" name="primer_apellido" required class="form-control" placeholder="Primer Apellido" aria-label="Primer Apellido" aria-describedby="basic-addon1">
-                            </div>
-
-                            <div class="input-group mb-3">
-                                    <input id="segundo_apellido" name="segundo_apellido" class="form-control" placeholder="Segundo Apellido" aria-label="Segundo Apellido" aria-describedby="basic-addon1">
-                            </div>
-            
-                            <div class="input-group mb-3">
-                                <input id="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-                            </div>
-            
-                            <div class="input-group mb-3">
-                                <input id="telefono" name="telefono" class="form-control" placeholder="Telefono" aria-label="Numero" aria-describedby="basic-addon1">
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <input id="numero" name="numero" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
-                            </div>
-        
-                            <button type="submit" class="btn btn-primary">REGISTRAR</button>
-                    
-                </form>  
-            </div>
-        </div>
+	<div class="col-sm-12">
+		<div class="row">
+			<div class="col-sm-12">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Nombres</th>
+							<th>Apellidos</th>
+				            <th>Correo</th>
+				            <th>Telefono</th>
+				            <th>Numero de Suerte</th>
+						</tr>
+					</thead>
+					<tbody class="tab">
+						@if(count($suscriptores)>0)
+							@foreach($suscriptores as $suscriptor)
+								<tr>
+								
+									<td>  <a href="{{ url('/show_participante/' . $suscriptor->idSuscriptor) }}">
+										Edit
+									</a>
+									
+									</td>
+								<td> {{$suscriptor->primer_nombre}} {{$suscriptor->segundo_nombre}} </td>
+								<td> {{$suscriptor->primer_apellido}} {{$suscriptor->segundo_apellido}}</td>
+								
+								<td> {{$suscriptor->email}}</td>
+								<td> {{$suscriptor->telefono}} </td>
+								<td> {{$suscriptor->numero}}</td>
+								</tr>
+							@endforeach
+						@else
+						    <tr>
+                                <td colspan="8">
+                                    <div class="alert alert-info">No existen suscriptores</div>
+                                </td>
+                            </tr>
+						@endif
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	</div>
 
             @else
             <div class="title m-b-md">
@@ -153,3 +153,4 @@
         </div>
     </body>
 </html>
+

@@ -106,40 +106,40 @@
                 <!--<div class="title m-b-md">
                     Inscripción de Sorteo
                 </div>-->
-                
-                <form action="{{url('/save_participante')}}" method="POST" class="form-group card">
+<form action="{{url('/save_participante')}}" method="POST" class="form-group card">
                     @csrf
                     <div class="card-body">
                             <h5 class="card-title">Ingrese los datos del participante: </h5>
                             <div class="input-group mb-3">
-                                <input id="primer_nombre" name="primer_nombre" class="form-control" placeholder="Primer Nombre" aria-label="Primer Nombre" required aria-describedby="basic-addon1">
+                                <input type="hidden" name="id" id="id" value="{{$suscriptor->idSuscriptor}}">
+                                <input id="primer_nombre" name="primer_nombre" class="form-control" placeholder="Primer Nombre" aria-label="Primer Nombre" value="{{$suscriptor->primer_nombre}}" required aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group mb-3">
-                                    <input id="segundo_nombre" name="segundo_nombre" class="form-control" placeholder="Segundo Nombre" aria-label="Segundo Nombre" aria-describedby="basic-addon1">
+                                    <input id="segundo_nombre" name="segundo_nombre" class="form-control" placeholder="Segundo Nombre" aria-label="Segundo Nombre" value="{{$suscriptor->segundo_nombre}}"aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group mb-3">
-                                <input id="primer_apellido" name="primer_apellido" required class="form-control" placeholder="Primer Apellido" aria-label="Primer Apellido" aria-describedby="basic-addon1">
+                                <input id="primer_apellido" name="primer_apellido" required class="form-control" value="{{$suscriptor->primer_apellido}}" placeholder="Primer Apellido" aria-label="Primer Apellido" aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group mb-3">
-                                    <input id="segundo_apellido" name="segundo_apellido" class="form-control" placeholder="Segundo Apellido" aria-label="Segundo Apellido" aria-describedby="basic-addon1">
+                                    <input id="segundo_apellido" name="segundo_apellido" class="form-control" value="{{$suscriptor->segundo_apellido}}" placeholder="Segundo Apellido" aria-label="Segundo Apellido" aria-describedby="basic-addon1">
                             </div>
             
                             <div class="input-group mb-3">
-                                <input id="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                                <input id="email" value="{{$suscriptor->email}}" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
                             </div>
             
                             <div class="input-group mb-3">
-                                <input id="telefono" name="telefono" class="form-control" placeholder="Telefono" aria-label="Numero" aria-describedby="basic-addon1">
+                                <input id="telefono" value="{{$suscriptor->telefono}}" name="telefono" class="form-control" placeholder="Telefono" aria-label="Numero" aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group mb-3">
-                                <input id="numero" name="numero" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
+                                <input id="numero" value="{{$suscriptor->numero}}" name="numero" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
                             </div>
         
-                            <button type="submit" class="btn btn-primary">REGISTRAR</button>
+                            <button type="submit" class="btn btn-primary">EDITAR</button>
                     
                 </form>  
             </div>

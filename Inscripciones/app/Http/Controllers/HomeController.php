@@ -17,11 +17,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         return view('home');
@@ -54,11 +50,15 @@ class HomeController extends Controller
     }
     public function show($di)
     {
-        return view('usuario_edit',SuscriptorM::find($di));
+        $var['suscriptor']=SuscriptorM::where('idSuscriptor','=',$di)->get()->first();
+        //return $var;
+        return view('editar',$var);
     }
     public function parts()
     {
-        return view('participantes',SuscriptorM::where('id_user','=',Auth::user()->id)->get());
+        $var['suscriptores']=SuscriptorM::where('id_user','=',Auth::user()->id)->get();
+        //return $var;
+        return view('suscriptores',$var);
     }
     public function update(Request $request)
     {
