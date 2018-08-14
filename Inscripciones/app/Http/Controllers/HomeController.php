@@ -23,11 +23,11 @@ class HomeController extends Controller
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         $mail->Username = 'sysboot@techlabsec.com';                 // SMTP username
         $mail->Password = 'Emelec94';                           // SMTP password
-        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 465;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('sysboot@techlabsec.com', 'Mailer');
+        $mail->setFrom('sysboot@techlabsec.com', 'SysBoot');
         $mail->addAddress($suscriptor->email, $suscriptor->primer_nombre);     // Add a recipient
         //$mail->addAddress('ellen@example.com');               // Name is optional
         //$mail->addReplyTo('info@example.com', 'Information');
@@ -40,8 +40,8 @@ class HomeController extends Controller
 
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Rifa ';
-        $mail->Body    = 'Te hemos enviado tu ticket de rifa';
+        $mail->Subject = 'Echo Dot';
+        $mail->Body    = 'Aquí está tu rifa';
        // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();

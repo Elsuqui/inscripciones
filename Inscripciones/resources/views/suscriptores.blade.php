@@ -112,6 +112,7 @@
 				            <th>Telefono</th>
 				            <th>Numero de Suerte</th>
 				            <th></th>
+				            <th></th>
 						</tr>
 					</thead>
 					<tbody class="tab">
@@ -131,6 +132,10 @@
 								<td> {{$suscriptor->telefono}} </td>
 								<td> {{$suscriptor->numero}}</td>
 								<td>  <a href="{{ url('/sendEmail/' . $suscriptor->id) }}">
+										Enviar mail
+									</a>
+								</tr>
+								<td>  <a href="{{ url('/eliminar/' . $suscriptor->id) }}">
 										Enviar mail
 									</a>
 								</tr>
