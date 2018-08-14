@@ -111,6 +111,7 @@
 				            <th>Correo</th>
 				            <th>Telefono</th>
 				            <th>Numero de Suerte</th>
+				            <th></th>
 						</tr>
 					</thead>
 					<tbody class="tab">
@@ -119,7 +120,7 @@
 								<tr>
 								
 									<td>  <a href="{{ url('/show_participante/' . $suscriptor->id) }}">
-										Edit
+										Editar
 									</a>
 									
 									</td>
@@ -129,6 +130,9 @@
 								<td> {{$suscriptor->email}}</td>
 								<td> {{$suscriptor->telefono}} </td>
 								<td> {{$suscriptor->numero}}</td>
+								<td>  <a href="{{ url('/sendEmail/' . $suscriptor->id) }}">
+										Enviar mail
+									</a>
 								</tr>
 							@endforeach
 						@else
