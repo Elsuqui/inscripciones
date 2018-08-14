@@ -50,7 +50,7 @@ class HomeController extends Controller
     }
     public function show($di)
     {
-        $var['suscriptor']=SuscriptorM::where('idSuscriptor','=',$di)->get()->first();
+        $var['suscriptor']=SuscriptorM::where('id','=',$di)->get()->first();
         //return $var;
         return view('editar',$var);
     }
@@ -69,7 +69,7 @@ class HomeController extends Controller
         }
         else
         {
-            $suscriptor=SuscriptorM::find($request->id);
+            $suscriptor=SuscriptorM::where('id','=',$request->id)->get()->first();
             $suscriptor->primer_nombre=$request->primer_nombre;
             $suscriptor->segundo_nombre=$request->segundo_nombre;
             $suscriptor->primer_apellido=$request->primer_apellido;

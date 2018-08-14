@@ -118,7 +118,7 @@
 							@foreach($suscriptores as $suscriptor)
 								<tr>
 								
-									<td>  <a href="{{ url('/show_participante/' . $suscriptor->idSuscriptor) }}">
+									<td>  <a href="{{ url('/show_participante/' . $suscriptor->id) }}">
 										Edit
 									</a>
 									

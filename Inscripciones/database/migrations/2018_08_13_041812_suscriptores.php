@@ -17,7 +17,7 @@ class Suscriptores extends Migration
         if(!Schema::hasTable('suscriptores'))
         {
             Schema::create('suscriptores', function (Blueprint $table) {
-                $table->bigIncrements('idSuscriptor');
+                $table->bigIncrements('id');
                 $table->integer('id_user')->unsigned();
                 $table->string('primer_nombre');
                 $table->string('segundo_nombre')->nullable();

@@ -106,12 +106,12 @@
                 <!--<div class="title m-b-md">
                     Inscripción de Sorteo
                 </div>-->
-<form action="{{url('/save_participante')}}" method="POST" class="form-group card">
+<form action="{{url('/editar_participante')}}" method="POST" class="form-group card">
                     @csrf
                     <div class="card-body">
                             <h5 class="card-title">Ingrese los datos del participante: </h5>
                             <div class="input-group mb-3">
-                                <input type="hidden" name="id" id="id" value="{{$suscriptor->idSuscriptor}}">
+                                <input type="hidden" name="id" id="id" value="{{$suscriptor->id}}">
                                 <input id="primer_nombre" name="primer_nombre" class="form-control" placeholder="Primer Nombre" aria-label="Primer Nombre" value="{{$suscriptor->primer_nombre}}" required aria-describedby="basic-addon1">
                             </div>
 
